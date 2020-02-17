@@ -6,7 +6,7 @@ The following is a list of data structures available in this repository:
 
 * **Stacks**
 	1. Stack (Array-based)
-	1. ~~Linked Stack~~
+	1. Linked Stack
 * **Queues**
 	1. Queue (Array-based)
 	1. ~~Linked Queue~~
