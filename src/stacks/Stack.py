@@ -66,30 +66,19 @@ class Stack:
 			for i in range(self.top, -1, -1):
 				print(self.data[i])
 
+# Test function
 def main():
-	n = int(input("Enter stack capacity: "))
-	stack = Stack(n)
+	stack = Stack(10)
 
-	while(True):
-		c = printMenu()
-		if(c==1):
-			v = int(input("Enter a value to push: "))
-			stack.push(v)
-		elif(c==2):
-			v = stack.pop()
-			print("Popped value: " + str(v))
-		elif(c==3):
-			stack.display()
-		elif(c==4):
-			return
+	stack.push(8)
+	stack.push(2)
+	stack.push(11)
+	stack.push(14)
+	stack.push(9)
 
-def printMenu():
-	c = 0
-	while(c<1 or c>4):
-		c = int(input("MENU\n----\n1. Push\n2. Pop\n3. Display\n4. Exit\nEnter choice: "))
-		if(c<1 or c>4):
-			print("Invalid choice! Try again...")
-	
-	return c
+	stack.pop()
+	stack.pop()
+
+	stack.display()
 
 main()

@@ -15,13 +15,11 @@
 
 
 
-# Implementation of a linked-list based Stack
+# Implementation of a linked-list based Queue
 # Supported operations:
 #	- Is Empty	O(1)
-#	- Is Full	O(1)
-#	- Push		O(1)
-#	- Pop		O(1)
-#	- Peek		O(1)
+#	- Enqueue	O(1)
+#	- Dequeue	O(1)
 #	- Display	O(n)
 
 class Node:
@@ -29,51 +27,53 @@ class Node:
 		self.data = v
 		self.next = None
 
-class LinkedStack:
+class LinkedQueue:
 	def __init__(self):
-		self.top = None
+		self.head = None
+		self.tail = None
 
-	def push(self, v):
-		temp = Node(v)
-		temp.next = self.top
-		self.top = temp
+	def isEmpty(self):
+		return(True if (self.head == None) else False)
 
-	def pop(self):
-		if(self.top == None):
-			raise(Exception("Stack underflow"))
+	def enqueue(self, v):
+		node = Node(v)
+		if(self.tail == None):
+			self.head = node
+			self.tail = node
 		else:
-			v = self.top.data
-			self.top = self.top.next
+			self.tail.next = node
+			self.tail = node
+	
+	def dequeue(self):
+		if(self.isEmpty()):
+			raise(Exception("Queue underflow"))
+		else:
+			v = self.head.data
+			self.head = self.head.next
 			return v
 	
-	def peek(self):
-		if(self.top == None):
-			raise(Exception("Stack underflow"))
-		else:
-			return self.top.data
-	
 	def display(self):
-		if(self.top == None):
-			raise(Exception("Stack is empty"))
+		if(self.isEmpty()):
+			print("Queue is empty")
 		else:
-			print("Stack contents:")
-			temp = self.top
+			print("Queue contents:")
+			temp = self.head
 			while(temp != None):
 				print(temp.data)
 				temp = temp.next
 
 def main():
-	stack = LinkedStack(10)
+	queue = LinkedQueue()
 
-	stack.push(8)
-	stack.push(2)
-	stack.push(11)
-	stack.push(14)
-	stack.push(9)
+	queue.enqueue(5)
+	queue.enqueue(7)
+	queue.enqueue(2)
+	queue.enqueue(9)
+	queue.enqueue(11)
 
-	stack.pop()
-	stack.pop()
+	queue.dequeue()
+	queue.dequeue()
 
-	stack.display()
+	queue.display()
 
 main()

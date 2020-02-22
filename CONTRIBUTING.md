@@ -21,7 +21,7 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 ## Any contributions you make will be under the GPLv3 Software License
 In short, when you submit code changes, your submissions are understood to be under the same [GPLv3 License](http://www.gnu.org/licenses/) that covers the project.
 
-## Report bugs using Github's [issues](https://github.com/akashnag/Algorithms/issues)
+## Report bugs using Github's [issues](https://github.com/akashnag/Data-Structures/issues)
 We use GitHub issues to track public bugs. Report a bug by opening a new issue. But before you do so, make sure the issue has not been reported/solved earlier. Please be as clear and concise as possible when reporting bugs.
 
 **Great Bug Reports** tend to have:
@@ -35,7 +35,7 @@ We use GitHub issues to track public bugs. Report a bug by opening a new issue. 
 - Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
 
 ## Use a Consistent Coding Style
-Please ensure all your code is properly indented and spaced.
+Please ensure all your code is properly indented and spaced as all existing code in this repository. Also ensure you include a simple test function along with your implementation of the data structure.
 
 ## License
 By contributing, you agree that your contributions will be licensed under its GPLv3 License.

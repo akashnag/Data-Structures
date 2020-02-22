@@ -65,29 +65,17 @@ class Queue:
 				print(self.data[i])
 
 def main():
-	n = int(input("Enter queue capacity: "))
-	queue = Queue(n)
+	queue = Queue(10)
 
-	while(True):
-		c = printMenu()
-		if(c==1):
-			v = int(input("Enter a value to enqueue: "))
-			queue.enqueue(v)
-		elif(c==2):
-			v = queue.dequeue()
-			print("Retrieved value: " + str(v))
-		elif(c==3):
-			queue.display()
-		elif(c==4):
-			return
+	queue.enqueue(5)
+	queue.enqueue(7)
+	queue.enqueue(2)
+	queue.enqueue(9)
+	queue.enqueue(11)
 
-def printMenu():
-	c = 0
-	while(c<1 or c>4):
-		c = int(input("MENU\n----\n1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\nEnter choice: "))
-		if(c<1 or c>4):
-			print("Invalid choice! Try again...")
-	
-	return c
+	queue.dequeue()
+	queue.dequeue()
+
+	queue.display()
 
 main()
